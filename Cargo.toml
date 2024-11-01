@@ -1,0 +1,45 @@
+[package]
+name = "cw-orch-cli"
+version = "0.2.3"
+authors = ["Buckram <misha@abstract.money>"]
+edition = "2021"
+license = "LGPL-3.0"
+repository = "https://github.com/AbstractSDK/cw-orch-cli"
+description = "Command-line tool for managing Cosmos-based interaction."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cw-orch = { version = "0.27.0", features = ["daemon"] }
+
+# Logs
+pretty_env_logger = { version = "0.5.0" }
+async-trait = { version = "0.1" }
+
+# Cosmos
+cosmwasm-std = { version = "2.1" }
+cw-utils = "2.0.0"
+cw20 = { version = "2.0" }
+cw-ownable = { version = "2.0.0" }
+cosmrs = { version = "0.19.0", features = ["cosmwasm", "grpc"] }
+ibc-chain-registry = { version = "0.29.2" }
+
+# Serde
+serde_json = "1.0.125"
+serde = { version = "1.0.208", default-features = false, features = ["derive"] }
+base64 = { version = "0.22.1" }
+
+# Interactive clap
+interactive-clap = "0.3.0"
+interactive-clap-derive = "0.3.0"
+clap = { version = "4.0.18", features = ["derive"] }
+color-eyre = { version = "0.6" }
+strum = { version = "0.24", features = ["derive"] }
+derive_more = "0.99"
+shell-words = "1.0.0"
+inquire = { version = "0.6", features = ["editor"] }
+
+# Key management
+keyring = "2.0.5"
+bip32 = { version = "0.5", features = ["mnemonic"] }
+rand_core = { version = "0.6", features = ["std"] }
